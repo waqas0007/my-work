@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+  <script>
+      class Human{
+        constructor(a, b, c){
+            this.name = a;
+            this.email = b;
+            this.fName = c;
+        }
+        eat(){
+            console.log('i am eating')
+        }
+        walk(){
+            console.log('i ama walking')
+        }
+
+      }
+      class Student extends Human{
+        constructor(name, email, fName){
+            super(name, email, fName);            //agr constructer bnya tu super lazmi lgana pare ga for inhetit
+        }
+               study(){
+                   console.log(this.name + " is studing");
+               }
+                                // new Human
+        }
+      
+ let h1= new Student('waqas','waqas@gmail.com', 'Amin');
+  
+  
+  </script>  
+</body>
+</html>

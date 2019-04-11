@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .tool{
+        width: 100px;
+    }
+    #drawingArea{
+        border: 2px solid black;
+        width: 400px;
+        min-height: 500px;
+        height: auto;
+    }
+    .shape{
+        width: 100px ;
+        padding: 20px;
+    }
+    </style>
+</head>
+
+<body>
+        
+                <div id="toolIcon">
+                <img src="circle.png" class="tool" alt="">
+                <img src="square.jpg" class="tool" alt="">
+                
+                </div>
+                <div id="drawingArea">
+                
+                </div>
+                
+                <script>
+                    let application = {
+                        addShape(shape){
+
+                            let addedShape = shape.cloneNode(); //for copy
+                            addedShape.setAttribute('class', 'shape');
+                            drawingArea.appendChild(addedShape);
+                        },
+
+
+
+
+
+                        init(){
+                        let tools = document.getElementsByClassName('tool');
+                        for(let tool of tools){
+                            tool.ondblclick = (evt)=>{
+                                console.log(evt.currentTarget)
+                                this.addShape(evt.currentTarget);
+                            }
+                        
+                        }
+                
+                    }
+                    }
+                    application.init();
+                    </script>
+                    
+                
+</body>
+</html>

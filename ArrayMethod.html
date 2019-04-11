@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Method</title>
+</head>
+
+<body>
+
+    <script>
+        //concat()                          //it will join two arrays
+        // let name = ['waqas', 'Ahmad', 'junaid'];
+        // let name2 = ['Masood', ['Muteeb','Hasan']]
+        // let res = name.concat(name2);
+        // console.log(res)                    //?????? how nested array concat in single array
+
+
+
+        
+        //copyWithin()                          // array.copyWithin(target, start, end)
+        // first index is where we replace/place the element, and second index where we count to start(default count from start ),
+        // and third index where we count stop(default count from end of array). element get (start index - end index)
+        // var array = [2, 3, 4, 5, 6, 7, 8, 9];
+        // let res = array.copyWithin(0, 3, 5);
+        // console.log(res)
+
+
+
+
+        //every()                               //If it finds an array element where the function returns a false value, every() returns false (and does not check the remaining values)
+        //If no false occur, every() returns true
+        //every() does not change the original array
+        //     let ages = [22,23,43,33,32,35,25]
+        //     //  ages.every(age=>{
+        //     //      if(age>= 22)
+        //     //     console.log(ages)
+        //     // })
+        // // or
+        //     function check(age){        //Check if all the values in the ages array are 18 or over
+        //         return age>= 18
+        //     }
+        //    let res = ages.every(check);
+        //    console.log(res);
+
+
+
+
+        //fill()                //arr.fill(value, start, end)   , it will not return new array 
+        // var arr = [1, 23, 46, 58];
+        // let res = arr.fill(87);
+        // console.log(res)
+        // //or
+        // var arr = [1, 23, 46, 58];
+        // let res = arr.fill(87, 1, 3);
+        // console.log(res)
+        // //or
+        // var arr = [1, 23, 46, 58];
+        // let res = arr.fill(87, 2);
+        // console.log(res)
+        // //or
+        // // JavaScript code for fill() function 
+        // function func() {
+        //     var arr = [1, 23, 46, 58];
+
+        //     // here value = 87, start index=1 and 
+        //     // and last index = 3  
+        //     arr.fill(87, 1, 3);
+        //     document.write(arr);
+        // }
+        // func();
+
+
+
+
+
+        //filter()          //it return new array
+        // var arr = [1, 23, 46, 58];
+        // let res = arr.filter(num=>{
+        //     console.log(arr)
+        // })
+        //or
+        //     function isEven(value) {
+        //      return value % 2 == 0;
+        // }
+
+        // var filtered = [11, 98, 31, 23, 944].filter(isEven);
+        // console.log(filtered);
+        //or
+        // function isPositive(value) {
+        //     return value > 0;
+        // }
+
+        // function func() {
+        //     var filtered = [112, 52, 0, -1, 944].filter(isPositive);
+        //     console.log(filtered);
+        // }
+        // func();
+
+
+
+       
+        //find()            //It return returns the array element value if any of the elements in the array which satisfy the condition, otherwise it returns undefined.
+        // input array contain some elements. 
+        // var array = [10, 20, 30, 40, 50];           //Get the value of the first element in the array that satisfy condition
+
+        // // Here find function returns the value of the first element 
+        // // in the array that satisfies the provided testing 
+        // // function (return element > 10). 
+        // var found = array.find(function (element) {
+        //     return element > 20;
+        // });
+
+        // // Printing desired values. 
+        // console.log(found);
+
+        var str = 'There was a parrot that was very beatiful. Once the parrot was sitting on a tall tree.';
+str.substr(0, str.indexOf('p', 20);
+
+
+    </script>
+</body>
+
+</html>

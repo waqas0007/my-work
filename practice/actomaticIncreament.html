@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="demo">
+</div>
+
+<button id="btn">automaticIncreament</button>
+<button id="stop">stop</button>
+    <script>
+    let    stop1=document.querySelector('#stop')
+    
+count =0;
+btn.onclick=function(){
+        var key =setInterval(()=>{
+
+            var t=count++;
+            demo.innerHTML=t;
+
+
+
+
+        },500)
+
+stop1.onclick=function(){
+    clearInterval(key)
+}
+}
+
+
+    </script>
+</body>
+</html>

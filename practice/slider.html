@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Slider</title>
+    <style>
+    body{
+        min-height: 70vh;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        margin-top: 10%;
+        background-image: url(img-2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    #container{
+        /* background-color: aqua; */
+        float: 0 0 80%;
+        min-height: 50vh;
+        width: 500px;
+        position: relative;
+        background-image: url("img-1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10px;
+        border: 5px solid black;
+        box-shadow: 10px 10px 10px black;
+    }
+    .btn{
+        position: absolute;
+        top: 50%;
+        left: -30px;
+        border-radius: 10px;
+        padding: 5px;
+        width: 70px;
+        outline: none;
+    
+    }
+    #next_btn{
+        left: 480px;
+
+    }
+    #next_btn:hover{
+        background-color: gray;
+        color: white;
+        /* box-shadow: 50px 50px black; */
+    }#pre_btn:hover{
+        background-color: gray;
+        color: white;
+        
+    }
+    #pre_btn{
+        background-color:white;
+      
+    }
+    
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <button class="btn" id="next_btn">Next</button>
+        <button class="btn" id="pre_btn">Previous</button>
+
+    </div>
+    <script>
+    let next = document.getElementById('next_btn');
+    let pre = document.getElementById('pre_btn');
+    let slider = document.getElementById('container');
+
+let count = 3;
+    next.addEventListener('click', nextImg);
+    pre.addEventListener('click', preImg);
+
+    function nextImg(){
+        slider.animate([{opacity:"0.1"},{opacity:"1"}], {duration: 1000, fill:"forwards"})
+        if(count == 8){
+            count = 3;
+        }
+        count++;
+        slider.style.backgroundImage = `url(img-${count}.jpg)`;
+        
+    }
+    function preImg(){
+        if(count == 3){
+            count = 8;
+        }
+        count--;
+        slider.style.backgroundImage = `url(img-${count}.jpg)`;
+       
+    }
+    
+    </script>
+</body>
+</html>

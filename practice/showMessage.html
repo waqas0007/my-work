@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Message</title>
+     <style>
+         body{
+            /* min-height: 50vh; */
+             display: flex;
+             justify-content: center;
+             justify-items: center;
+             background-color: brown;
+             
+
+             
+            
+             
+         }
+          button{
+             display: block;
+             /* text-align: center; */
+             margin:  5px auto;
+             flex: 0 0 80%;
+             padding: 5px;
+             border-radius: 5px;
+             outline: none;
+             width: 150px;
+             
+             
+         }
+         input{
+             padding: 5px;
+             border-radius: 5px;
+             outline: none;
+             margin: 5px  0 5px 0;
+         }
+         button{
+
+         }
+         #container{
+             text-align: center;
+             width: 200px;
+             background-color: aqua;
+             padding: 20px;
+             border-radius: 15px;
+             
+    margin-top: 30vh;
+}
+            
+            
+         
+      
+     
+     </style>
+ </head>
+ <body>
+     <div id="container">
+         <h2>Message you would like to send</h2>
+         <input type="text" class="input">
+         <button>Press to send</button>
+         <h3>Last Message to delieverd</h3>
+         <h1 class="messageOut"></h1>
+     </div>
+
+    <script>
+    let input = document.querySelector('.input');
+    let btn = document.querySelector('button');
+    let show = document.querySelector('.messageOut');
+
+    btn.addEventListener('click', messageShow);
+
+
+    function messageShow(){
+        if(input.value === ''){
+            alert('please enter a message in field');
+        }else{
+            let content = input.value;
+        show.innerHTML = content;
+        input.value = '';
+        
+    }
+    }
+        
+    
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quotes</title>
+    <style>
+    body{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        min-height: 70vh;
+        background-color: palevioletred;
+    }
+    .container{
+        text-align: center;
+        margin-top: auto;
+        background-color: wheat;
+        width: 300px;
+        padding: 1rem;
+        height: auto;
+        border-radius: 10px;
+        border: 5px solid white;
+        
+
+    }
+    button{
+        border-radius: 7px;
+        background-color: sandybrown;
+        color: white;
+        padding: 0.5rem;
+
+        outline: none;
+    }
+    #quote{
+        margin: 1rem;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: aqua;
+        border-left: 10px solid darkgoldenrod;
+        padding: 0.5rem;
+        /* min-width: 100px; */
+       
+
+    }
+    #aurthorName{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Quotes by famous people</h2>
+        <button>press to display Quote</button>
+        <div id="quote">Quote</div>
+        <h3 id="aurthorName">Author of the Quote</h3>
+    </div>
+    <script>
+        let quotes = [{
+            name:'Indira Gandhi',
+            quote:'You cannot shake hands with a clenched fist.'
+        },
+        {
+            name:'Ernest Hemingway',
+            quote:'But man is not made for defeat. A man can be destroyed but not defeated.'
+
+        },
+        {
+            name:'Mother Teresa',
+            quote:'We shall never know all the good that a simple smile can do.'
+
+        },
+        {
+            name:'Oscar Wilde',
+            quote:'Be yourself; everyone else is already taken.'
+        },
+        {
+            name:'Marcus Tullius Cicero',
+            quote:'A room without books is like a body without a soul.'
+        },
+        {
+            name:'Mark Twain',
+            quote:'If you tell the truth, you dont have to remember anything.'
+        },
+        {
+            name:'Friedrich Nietzsche, Twilight of the Idols',
+            quote:'Without music, life would be a mistake.'
+
+        },
+        {
+            name:'Dr. Seuss',
+            quote:'Dont cry because its over, smile because it happened.'
+        }];
+    let btn = document.querySelector('button');
+    let quote = document.getElementById('quote');
+    let aurthorName = document.getElementById('aurthorName');
+
+    btn.addEventListener('click', displayQuote)
+
+function displayQuote(){
+    let random = Math.floor(Math.random()*quotes.length)
+    quote.innerHTML = quotes[random].quote;
+    aurthorName.innerHTML = quotes[random].name;
+}
+
+
+
+
+    
+    </script>
+</body>
+</html>

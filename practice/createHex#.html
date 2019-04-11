@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Changw with hex #</title>
+    <style>
+        body {
+            
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            min-height: 50vh;
+
+        }
+
+        div.container{
+            margin-top: auto;
+            text-align: center;
+         }
+         #btn{
+             padding: 0.5rem;
+             font-weight: bold;
+             outline: none;
+             color: white;
+             background-color: blue;
+             border: 2px double wheat;
+             border-radius: 20px;
+         }
+         p{
+             font-size: 15px;
+             font-weight: bold;
+
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+         span{
+             font-size: 30px;
+             font-weight: bold;
+         }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>The hexcode of body background color: <span id="hexCode"></span></p><br>
+
+        <button id="btn">Click to change body color with hex code</button>
+    </div>
+    <script>
+
+        let hexNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+        let btn = document.querySelector('button');
+        let hexCode = document.getElementById('hexCode');
+        let body = document.querySelector('body')
+
+        btn.addEventListener('click', generateColor);
+
+        function generateColor() {
+            let hexCol = '#';
+            for (var i = 0; i < 6; i++) {
+                let random = Math.floor(Math.random() * hexNumber.length);
+                hexCol += hexNumber[random]
+            }
+            body.style.backgroundColor = hexCol;
+            hexCode.innerHTML = hexCol
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

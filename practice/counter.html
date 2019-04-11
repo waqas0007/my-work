@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+</head>
+<style>
+    body{
+
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+        background-image: url("img-1.jpg");
+        /* background-position: center; */
+        background-size: cover;
+        box-sizing: border-box;
+        /* background-repeat: no-repeat; */
+        margin-top: 20%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    div#container{
+        padding: 20px;
+        color: white;
+        text-align: center;
+        flex: 0 0 70%;
+        /* background-color: aqua; */
+        box-shadow: 10px 20px 10px 20px black;
+        
+        
+    }
+    button{
+        padding: 5px;
+        
+        border-radius: 10px;outline: none;
+    }
+    h2{
+        font-size: 50px;
+        font-weight: bold;
+    }
+    #lower:hover{
+        background-color: red;
+        outline: none;
+    }
+    #add:hover{
+
+        background-color: green;
+        outline: none;
+    }
+
+
+
+</style>
+<body>
+
+<div id="container">
+    <h1>Counter</h1>
+    <h2 class="counter">0</h2>
+    <div>
+        <button class="btn" id="lower">Lower Count</button>
+        <button class="btn" id="add">Add Count</button>
+    </div>
+
+</div>
+
+<script>
+
+    let counter = document.querySelector('.counter');
+    let lower = document.getElementById('lower');
+    let add = document.getElementById('add'); 
+
+    lower.addEventListener('click',lowCounter);
+    let couterStart = 0
+    function lowCounter(){
+        couterStart--;
+
+        counter.innerHTML = couterStart;
+        if(counter.innerHTML < 0){
+            counter.style.color ='red'
+        }
+        else if(counter.innerHTML == 0){
+            counter.style.color ='white'
+        }
+    }
+    add.addEventListener('click', addCounter);
+    function addCounter(){
+        couterStart++;
+
+        counter.innerHTML = couterStart;
+        if(counter.innerHTML > 0){
+            counter.style.color ='green'
+        }
+        else if(counter.innerHTML == 0){
+            counter.style.color ='white'
+        }
+        counter.animate([{opacity:"0.2"},{opacity:"1"}], {duration:500, fill:"forwards"})
+    }
+    
+    
+    
+    
+</script>
+</body>
+</html>

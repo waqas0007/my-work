@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my baloon</title>
+    <style>
+      .baloon{
+          width: 110px;
+          /* border: 1px solid red; */
+          /* margin: 2px; */
+          position: absolute;
+          
+          
+          top: 400px;
+      } 
+      .line{
+          /* position: relative; */
+         margin-top: 100px;
+        
+
+      } 
+        
+        
+    </style>
+    <script>
+        window.onload = function(){
+            class Baloon{
+                constructor(){
+                    this.alreadyClick = false;
+                    this.img = document.createElement('img');
+                   
+                    this.img.setAttribute('class', 'baloon');
+                    this.img.src = 'baloon.png';
+                   
+                    document.body.appendChild(this.img);
+                    this.img.onclick = ()=>{
+                        if(!this.alreadyClick){
+                            this.alreadyClick =true;
+                         
+                            // this.img.top = Math.floor(Math.random())
+
+                        this.fly();
+
+                        }
+                    }
+                 }
+                 fly(){
+                     let key=setInterval(()=>{
+
+                        this.img.style.top= (this.img.offsetTop - 1) + 'px';
+                        // this.img.style.left= (this.img.offsetLeft - 1) + 'px';
+                        // this.img.style.right= (this.img.offsetRight - 1) + 'px';
+                        if(this.img.offsetTop <100){
+                            this.img.src = 'red-baloon.png'
+                        }
+                        if(this.img.offsetTop<0){
+                            // clearInterval(key);
+                        }
+                        
+
+
+                     }, 10)
+
+                 }
+            
+            }
+            for(var i =0; i < 10; i++){
+                let newBallown = new Baloon();
+                newBallown.img.style.left = (i * 130) + 'px';
+
+            }
+        
+       
+        }
+        </script>
+    
+</head>
+<body>
+   <hr class="line">
+</body>
+</html>
